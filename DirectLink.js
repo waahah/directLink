@@ -20,6 +20,7 @@
 // ==/UserScript==
 
 (function() {
+    'use strict';                     //启用严格模式
     //转载请注明出处谢谢
     const path = window.location.host;
     function bs4(){
@@ -83,15 +84,14 @@
                 btu.click();
             }
         },200);
-        async function str() {
+        const str = () => {
             return "https://link.zhihu.com/?target=";
         }
-        str().then(
-            value => {
-                return directLink(value);
+        (async () => str()) ().then(
+           async value => {
+                await directLink(value);
             }
         );
-        setTimeout(str,100);
     }
 
     function blogCsdn(){
@@ -115,7 +115,7 @@
             }
         },100);
         //console.log('csdn功能已启用！');
-        setTimeout(directLink,100);
+        (async () => await directLink()) ();
         /*const script = () => {
             let el = document.createElement("script");
             el.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js";
@@ -150,15 +150,13 @@
             copy_node.css('float','left');
             copy_node.insertAfter($('div.sticky-block-box'));*/
         },400);
-        async function self() {
-            return "https://link.juejin.cn?target=";
-        }
+        
+        const self = (async () => await "https://link.juejin.cn?target=")
         self().then(
-            value => {
-                return directLink(value);
+           async value => {
+                await directLink(value);
             }
         );
-        setTimeout(self,100);
     }
 
     function jianshu(){
@@ -168,15 +166,14 @@
         $('div._27yofX').remove();
         //不需要decode解码
         async function self() {
-            return "https://link.jianshu.com?t=";
+            return await "https://link.jianshu.com?t=";
         }
         self().then(
-            value => {
-                return directLink(value);
+            async value => {
+                await directLink(value);
             }
         );
         //console.log("简书功能已启用");
-        setTimeout(self,100);
     }
 
     function gitee(){
@@ -186,14 +183,14 @@
             stars.remove();
         }
         async function self() {
-            return "https://gitee.com/link?target=";
+            return await "https://gitee.com/link?target=";
         }
         self().then(
-            value => {
-                return directLink(value);
+            async value => {
+                await directLink(value);
             }
         );
-        setTimeout(self,100);
+        //setTimeout(self,100);
     }
 
     function weiboCom(){
@@ -201,11 +198,14 @@
         if(tips){
             tips.remove();
         }
-        const str_weiboCom = "//weibo.cn/sinaurl?u=";
         const self_weiboCom = () => {
-            return directLink(str_weiboCom);
+            return "//weibo.cn/sinaurl?u=";
         }
-        setTimeout(self_weiboCom,100);
+        (async () => await self_weiboCom()) ().then(
+            async value => {
+                await directLink(value);
+            }
+        );
     }
 
     const host = [
