@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         链外直达去广告csdn免登录复制
-// @namespace    https://github.com/waahah/
-// @version      0.1.1
-// @description  动态监测整个页面链接变化，略过知乎、csdn、简书、掘金、gitee、微博安全中心中间页站外链接直接跳转,以及去除相应广告。解除csdn未登录复制限制，移除知乎、csdn的强制登陆弹窗,getbootstrap4中文网及上述网站去除烦人的广告
+// @name         略过安全中心直达外链，去除弹窗广告，解除csdn复制限制
+// @namespace    https://github.com/waahah
+// @version      0.1.2
+// @description  动态监测整个页面链接变化，略过知乎、csdn、简书、掘金、gitee、微博安全中心中间页外站链接直接跳转。解除csdn未登录复制限制，移除知乎、csdn的强制登陆弹窗,getbootstrap4中文网及上述网站去除冗余的广告
 // @author       waahah
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M13.06 8.11l1.415 1.415a7 7 0 0 1 0 9.9l-.354.353a7 7 0 0 1-9.9-9.9l1.415 1.415a5 5 0 1 0 7.071 7.071l.354-.354a5 5 0 0 0 0-7.07l-1.415-1.415 1.415-1.414zm6.718 6.011l-1.414-1.414a5 5 0 1 0-7.071-7.071l-.354.354a5 5 0 0 0 0 7.07l1.415 1.415-1.415 1.414-1.414-1.414a7 7 0 0 1 0-9.9l.354-.353a7 7 0 0 1 9.9 9.9z'/%3E%3C/svg%3E
-// @require      https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js
+// @require      https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js
 // @match        *://getbootstrap.net/docs/*
 // @match        *://zhuanlan.zhihu.com/p/*
 // @match        *://www.zhihu.com/question/*
